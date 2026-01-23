@@ -1,0 +1,8 @@
+---
+- name: Sample Hello world!!
+  hosts: all
+  tasks:
+    - name: Printing the Hello world.
+      debug:
+        msg: "Hello World!, This is for AAP testing.!!!!"
+        

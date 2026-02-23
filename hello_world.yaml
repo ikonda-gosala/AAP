@@ -15,7 +15,7 @@
         var: disk_usage.stdout_lines
 
     - name: Check CPU usage (top command - batch mode)
-      command: top -bn1 | grep "Cpu(s)"
+      command: top -bn1
       register: cpu_usage
 
     - name: Print CPU usage

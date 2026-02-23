@@ -5,4 +5,19 @@
     - name: Printing the Hello world.
       debug:
         msg: "Hello World!, This is for AAP testing.!!!!"
-        
+
+    - name: Check disk usage with df -hT
+      command: df -hT
+      register: disk_usage
+
+    - name: Print disk usage
+      debug:
+        var: disk_usage.stdout_lines
+
+    - name: Check CPU usage (top command - batch mode)
+      command: top -bn1 | grep "Cpu(s)"
+      register: cpu_usage
+
+    - name: Print CPU usage
+      debug:
+        var: cpu_usage.stdout

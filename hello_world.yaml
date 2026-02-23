@@ -14,10 +14,10 @@
       debug:
         var: disk_usage.stdout_lines
 
-    - name: Check CPU usage (top command - batch mode)
-      command: top -bn1
-      register: cpu_usage
+    - name: print the files in the current directory
+      command: ls -al
+      register: list_files
 
-    - name: Print CPU usage
+    - name: Printing the List files
       debug:
-        var: cpu_usage.stdout
+        var: list_files
